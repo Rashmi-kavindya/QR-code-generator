@@ -1,0 +1,99 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+</head>
+<body>
+    <script type="text/javascript" src="script.js">
+    <script type="text/javascript">
+        // alert("Hello, World!");
+        // function showit()
+        // {
+        //     // var myalert = document.getElementById("atext").value;
+        //     //var myalert = document.getElementById("atext").innerHTML;
+        //     // var myalert = document.getElementById("atext").src;
+        //     // alert(myalert);
+        //     //document.getElementById("atext").innerHTML="changed text";
+        //     //document.getElementById("atext").src="https://static-00.iconduck.com/assets.00/javascript-js-icon-2048x2048-nyxvtvk0.png" alt="JavaScript Icon" width="100" height="100"
+        //     // let img = document.getElementById("atext");
+        //     // img.src = "https://static-00.iconduck.com/assets.00/javascript-js-icon-2048x2048-nyxvtvk0.png";
+        //     // img.alt = "JavaScript Icon";
+        //     // img.width = 100;
+        //     // img.height = 100;
+        //     //alert(document.getElementById("atext").value);
+        // }
+    </script> -->
+    <!-- <input type="text" id="atext"> -->
+    <!-- <textarea id="atext" rows="10" cols="20"></textarea> -->
+    <!-- <p id="atext">Hello, World!</p> -->
+    <!-- <select id="atext">
+        <option value="One">1</option>
+        <option value="Two">2</option>
+    </select> -->
+    <!-- <img id="atext" src="https://static-00.iconduck.com/assets.00/javascript-js-icon-2048x2048-nyxvtvk0.png" alt="JavaScript Icon" width="100" height="100"> -->
+    <!-- <p id="atext">Hello, World!</p> -->
+    <!-- <img src="" id="atext">
+    <input type="submit" value="Click Me" onclick="showit()">
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <script type="text/javascript">
+        function genQR() {
+            var gapi="https://chart.googleapis.com/chart?chf=bg,s,65432100&cht=qr&chs=";
+            var myimg=document.getElementById("img");
+            var mytext=document.getElementById("qrtext").value;
+            var mysize=document.getElementById("size").value;
+
+            if (mytext!=="" && mysize=="100")
+            {
+                myimg.src=gapi+"100x100"+"&chl="+mytext;
+                //https://chart.googleapis.com/chart?cht=qr&chs=100x100&chl=hello
+            }
+        }
+    </script> -->
+    <script type="text/javascript">
+        function genQR() {
+            var myimg = document.getElementById("img");
+            var mytext = document.getElementById("qrtext").value;
+            var mysize = document.getElementById("size").value;
+
+            if (mytext !== "") {
+                // Build the URL with text and size
+                myimg.src = "https://quickchart.io/qr?text=" + encodeURIComponent(mytext) + "&size=" + mysize + "x" + mysize;
+            }
+        }
+    </script>
+
+    <div class="grid">
+        <h2 align="center">QR Code Generator</h2>
+        <center><img src="" id="img"></center>
+
+        <select id="size">
+            <option value="100">100x100</option>
+            <option value="150">150x150</option>
+            <option value="200">200x200</option>
+            <option value="250" selected>250x250</option>
+            <option value="300">300x300</option>
+        </select>
+        <br><br>
+        <textarea placeholder="Enter Your Text" id="qrtext"></textarea>
+        <br><br>
+        <input type="submit" value="Generate" onclick="genQR()">
+
+        <p>Developed By Rashmi Kavindya</p>
+    </div>
+</body>
+</html>
