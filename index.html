@@ -73,6 +73,8 @@
             if (mytext !== "") {
                 // Build the URL with text and size
                 myimg.src = "https://quickchart.io/qr?text=" + encodeURIComponent(mytext) + "&size=" + mysize + "x" + mysize;
+            } else {
+                alert("Please enter some text to generate the QR code.");
             }
         }
     </script>
